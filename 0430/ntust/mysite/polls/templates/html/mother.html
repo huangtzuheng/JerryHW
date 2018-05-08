@@ -1,0 +1,16 @@
+<form action="/polls/save/" method="POST" novalidate="novalidate">
+{% csrf_token %}
+	User name:<br>
+	<input type="taxt" name="username"><br>
+	Title:<br>
+	<input type="taxt" name="title"><br>
+	Substance:<br>
+	<input type="taxt" name="content"><br>
+	<input class="btn btn-success" type="submit" value="Post"/>
+</form>
+
+{% for r in m %}
+	<h1>{{ r.username }}</h1>
+	<h2>{{ r.title }}</h2>
+	<p>{{ r.content }}</p>
+{% endfor %}
