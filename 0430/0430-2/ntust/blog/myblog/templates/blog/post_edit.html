@@ -1,0 +1,25 @@
+<h2>編輯文章</h2>
+<a href="/">首頁</a>
+<hr>
+<form action="" method="post">
+	{% csrf_token %}
+	<table>
+		<tr>
+			<td>使用者</td>
+			<td><input name="author" value="{{ post.author }}"></td>
+		</tr>
+
+		<tr>
+			<td>標題</td>
+			<td><input name="title" value="{{ post.title }}"></td>
+		</tr>
+		
+		<tr>
+			<td>內容</td> 
+			<td><textarea name="text" rows="10">{{ post.text }}</textarea></td>
+		</tr>
+			
+	</table>
+
+	<input type="submit" value="送出">
+</form>

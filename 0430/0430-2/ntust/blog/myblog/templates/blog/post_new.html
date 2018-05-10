@@ -1,0 +1,23 @@
+<h2>新增文章</h2>
+<a href="/">首頁</a>
+<hr>
+<form action="/save/" method="POST" novalidate="novalidate">
+	{% csrf_token %}
+	<table>
+		<tr>
+			<td>使用者</td>
+			<td><input name="tb_user" id="tb_user"  type="text" class="input-full" /></td>
+		</tr>
+
+		<tr>
+			<td>標題</td>
+			<td><input name="tb_title" id="tb_title"  type="text" class="input-full"/></td>
+		</tr>
+
+		<tr>
+			<td>內容</td>
+			<td><textarea name="tb_text" id="tb_text" rows="10" class="input-full" style="resize: none;"></textarea></td>
+		</tr>
+	</table>
+	<button type="submit">送出</button>
+</form>

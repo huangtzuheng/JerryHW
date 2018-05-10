@@ -1,0 +1,18 @@
+<h1>Austin's Blog</h1>
+<hr>
+<div align="right"><a href="new/">新增文章</a></div>
+{% for post in posts %}
+	<div>
+		<p>published: {{post.published_date }}</p>
+		<h1><a href="">{{ post.title }}</a></h1>
+		<p>{{ post.text|linebreaksbr }}</p>
+		<div align="right"><a href="edit/?q={{ post.pk }}">編輯</a>
+			<form action="" method="post">
+				{% csrf_token %}
+				<input type="hidden" name="pk" value="{{ post.pk }}">
+				<input type="submit" value="刪除">
+			</form>
+		</div>
+	</div>
+	<hr>
+{% endfor %}
